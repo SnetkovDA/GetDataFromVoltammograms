@@ -6,7 +6,7 @@ This software provides you ability to separate dark and light photocurrent on vo
 CSV file must be constructed in this way:
 First colomn - time; Second colomn - current; Third colomn - potential; 
 All colomns should be separated by ";".
-2. Choose polynom power to separate source data. (Supported values: 0 - 6).
+2. Choose polynom power to separate source data. (Supported values: 1 - 6).
 3. Press F2 key (or use Actions->Find points).
 4. Now you can see plot of absolute values with line separates it into two part.
 5. Press Ctrl+R to show two received graphs and finded points.
