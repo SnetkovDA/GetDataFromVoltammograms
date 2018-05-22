@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace Simplifier
 {
     public enum PointType { Source = 0, Result1, Result2, Polinom, AbsSource, FindPoints1, FindPoints2 }
-    public enum DataType { Current = 0, Potential, Time }
+    public enum DataType { Current = 0, Potential, Time, Index }
 
     class Point
     {
@@ -106,11 +106,21 @@ namespace Simplifier
                 StreamReader opFile = new StreamReader(fileName);
                 String line;
                 Int32 index = 0;
-                while ((line = opFile.ReadLine()) != null)
+                line = opFile.ReadLine();
+                if (fileType == 2)
                 {
-                    points[0].Add(new Point(line, index, fileType));
+                    for (int i = 0; i < line.Length; i++)
+                    {
+                        if(Char.IsLetter(line[i]))
+                            line = opFile.ReadLine();
+                    }
+                }
+                do
+                {
+                    points[(Int32)PointType.Source].Add(new Point(line, index, fileType));
                     index++;
                 }
+                while ((line = opFile.ReadLine()) != null);
             }
             catch (Exception)
             {
@@ -166,13 +176,8 @@ namespace Simplifier
             points[(Int32)PointType.Result2] = new List<Point>();
             points[(Int32)PointType.FindPoints1] = new List<Point>();
             points[(Int32)PointType.FindPoints2] = new List<Point>();
-            Int32 flag;
-            for (int j = 0; j < polynom.Length; j++)
-                temp += polynom[j] * Power(points[(Int32)PointType.AbsSource][0].Values[(int)x_axis], j);
-            if (points[(Int32)PointType.AbsSource][0].Values[(int)y_axis] > temp)
-                flag = 1;
-            else
-                flag = 2;
+            Int32 flag = 0;
+
             for (int i = 0; i < points[(Int32)PointType.AbsSource].Count; i++)
             {
                 temp = 0;
@@ -184,7 +189,13 @@ namespace Simplifier
                     {
                         points[(Int32)PointType.Result1].Add(new Point(points[(Int32)PointType.Source][i]));
                         if (flag != 1)
-                            points[(Int32)PointType.FindPoints1].Add(new Point(points[(Int32)PointType.Source][i - shift]));
+                        {
+                            if(i - shift>0)
+                                points[(Int32)PointType.FindPoints1].Add(new Point(points[(Int32)PointType.Source][i - shift]));
+                            else
+                                points[(Int32)PointType.FindPoints1].Add(new Point(points[(Int32)PointType.Source][0]));
+                        }
+                            
                         flag = 1;
                     }
 
@@ -195,7 +206,12 @@ namespace Simplifier
                     {
                         points[(Int32)PointType.Result2].Add(new Point(points[(Int32)PointType.Source][i]));
                         if (flag != 2)
-                            points[(Int32)PointType.FindPoints2].Add(new Point(points[(Int32)PointType.Source][i - shift]));
+                        {
+                            if (i - shift > 0)
+                                points[(Int32)PointType.FindPoints2].Add(new Point(points[(Int32)PointType.Source][i - shift]));
+                            else
+                                points[(Int32)PointType.FindPoints2].Add(new Point(points[(Int32)PointType.Source][0]));
+                        }
                         flag = 2;
                     }
                         
