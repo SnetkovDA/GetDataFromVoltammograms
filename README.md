@@ -1,6 +1,17 @@
 # Get data from Voltammograms
 This software provides you ability to separate dark and light current on voltammogram.
 
+## Project description
+* Folder [Simplifier](https://github.com/SnetkovDA/GetDataFromVoltammograms/tree/master/Simplifier) contains full source code 
+of the project.
+
+* File [GDFVG.exe](https://github.com/SnetkovDA/GetDataFromVoltammograms/blob/master/GDFVG.exe) is ready to use,
+builded version of the project for Windows OS (32 bit).
+To run it:
+1. Download .exe file.
+2. (optional) Copy to any folder.
+3. Run GDFVG.exe file.
+
 ## How to use this programm?
 1. Open file with data. Supports: *.dat, .csv files.*
     CSV file must be constructed in this way:
@@ -15,16 +26,8 @@ This software provides you ability to separate dark and light current on voltamm
 6. If you satisfied with the result you achive, press Ctrl+S and choose what you want to save. Or if you don't satisfied 
 with the result, change parameters and go to step 3.
 
-## Project description
-* Folder [Simplifier](https://github.com/SnetkovDA/GetDataFromVoltammograms/tree/master/Simplifier) contains full source code 
-of the project.
-
-* File [GDFVG.exe](https://github.com/SnetkovDA/GetDataFromVoltammograms/blob/master/GDFVG.exe) is ready to use,
-builded version of the project for Windows OS (32 bit).
-To run it:
-1. Download .exe file.
-2. (optional) Copy to any folder.
-3. Run GDFVG.exe file.
+## Screenshots:
+![Screenshoot 1](https://imgur.com/a/MhbxWrC?raw=true "")
 
 ## Contact information
 Created by Dmitriy Snetkov.
