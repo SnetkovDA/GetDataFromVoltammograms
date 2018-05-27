@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
@@ -13,20 +11,18 @@ namespace Simplifier
     public partial class Form1 : Form
     {
         OpenedFile currOpenedFile;
-        Graphics gr;
-        Pen p;
         Double[] polynom;
+        String defName;
 
         DataType x_axis;
         DataType y_axis;
         PointType plotType;
         PointType saveType;
+        PointType tableType;
 
         public Form1()
         {
             InitializeComponent();
-            gr = grapficsOut.CreateGraphics();
-            p = new Pen(Color.Green, 1.0f);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,6 +33,8 @@ namespace Simplifier
             y_axis = DataType.Current;
             yAxesLabel.Text = "I";
             saveType = PointType.AbsSource;
+            tableType = PointType.Source;
+            defName = this.Text;
 
             mainPlot.ChartAreas[0].CursorY.IsUserEnabled = true;
             mainPlot.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
@@ -47,7 +45,16 @@ namespace Simplifier
             mainPlot.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
             mainPlot.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
             mainPlot.ChartAreas[0].AxisX.ScrollBar.IsPositionedInside = true;
-            
+
+            dataView.ColumnCount = 2;
+            dataView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            dataView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataView.ColumnHeadersDefaultCellStyle.Font = new Font(dataView.Font, FontStyle.Bold);
+            dataView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataView.GridColor = Color.Black;
+            dataView.RowHeadersVisible = false;
+            dataView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataView.MultiSelect = false;
         }
 
         private void openButDropList_Click(object sender, EventArgs e)
@@ -59,14 +66,15 @@ namespace Simplifier
             {
                 currOpenedFile.LoadData(ofd1.FileName, ofd1.FilterIndex);
                 consoleOut.Text = "Success reading file";
+                findPointBut.Enabled = true;
+                dataView.Enabled = true;
+                this.Text = defName + " [" + ofd1.FileName + "]";
             }
             plotType = PointType.Source;
             Drawing(true);
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            tableType = PointType.Source;
+            DisplayResults();
+            
         }
 
         private void saveButDropList_Click(object sender, EventArgs e)
@@ -105,11 +113,6 @@ namespace Simplifier
             Drawing(false);
         }
 
-        private void displayAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void eTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             plotType = PointType.Source;
@@ -134,6 +137,23 @@ namespace Simplifier
             for (int i = 0; i < xVals.Length; i++)
             {
                 mainPlot.Series[(Int32)plotType].Points.AddXY(xVals[i], yVals[i]);
+            }
+            
+        }
+
+        void DisplayResults()
+        {
+            Double[] xVals = currOpenedFile.GetArray(tableType, x_axis);
+            Double[] yVals = currOpenedFile.GetArray(tableType, y_axis);
+            if (xVals == null) return;
+            if (yVals == null) return;
+            dataView.Rows.Clear();
+            dataView.Name = "Gr1";
+            dataView.Columns[0].HeaderText = x_axis.ToString();
+            dataView.Columns[1].HeaderText = y_axis.ToString();
+            for (int i = 0; i < xVals.Length; i++)
+            {
+                dataView.Rows.Add(xVals[i], yVals[i]);
             }
         }
 
@@ -179,11 +199,6 @@ namespace Simplifier
             Drawing(true);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void findPointsButtom_Click(object sender, EventArgs e)
         {
             if (currOpenedFile.points[(Int32)PointType.Source].Count < 1) return;
@@ -199,7 +214,8 @@ namespace Simplifier
                 sb.Append(polynom[i]);
                 sb.Append("*x^");
                 sb.Append(i);
-                sb.Append(" ");
+                if(i != 0)
+                    sb.Append("+");
             }
             if (leng > 0)
                 sb.Append("...");
@@ -209,7 +225,7 @@ namespace Simplifier
             plotType = PointType.Polinom;
             Drawing(false);
             currOpenedFile.SliceGraphics(polynom, (Double)deltaValue.Value, (Int32)shiftAfterLast.Value, DataType.Potential, DataType.Current);
-            
+            tableType = PointType.FindPoints1;
         }
 
         private void displayCalculatedPlot_Click(object sender, EventArgs e)
@@ -222,6 +238,87 @@ namespace Simplifier
             Drawing(false);
             plotType = PointType.FindPoints2;
             Drawing(false);
+            DisplayResults();
+        }
+
+        private void dataView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataView.SelectedRows.Count < 1) return;
+            Int32 i = dataView.SelectedRows[0].Index;
+            if (i > currOpenedFile.points[(Int32)tableType].Count-1)
+                i = currOpenedFile.points[(Int32)tableType].Count - 1;
+            mainPlot.Series[(Int32)PointType.SelectedPoint].Points.Clear();
+            mainPlot.Series[(Int32)PointType.SelectedPoint].Points.AddXY(currOpenedFile.points[(Int32)tableType][i].Values[(Int32)x_axis], currOpenedFile.points[(Int32)tableType][i].Values[(Int32)y_axis]);
+        }
+
+        private void displTableFindPoints1_Click(object sender, EventArgs e)
+        {
+            tableType = PointType.FindPoints1;
+            DisplayResults();
+        }
+
+        private void displTableFindPoints2_Click(object sender, EventArgs e)
+        {
+            tableType = PointType.FindPoints2;
+            DisplayResults();
+        }
+
+        private void removeTableButt_Click(object sender, EventArgs e)
+        {
+            if (dataView.SelectedRows.Count < 1 || dataView.SelectedRows[0].Index > currOpenedFile.points[(Int32)tableType].Count - 1) return;
+            Int32 i = dataView.SelectedRows[0].Index;
+            currOpenedFile.points[(Int32)tableType].RemoveAt(i);
+            displayCalculatedPlot_Click(sender, e);
+        }
+        
+        private void saveScreenShoot_Click(object sender, EventArgs e)
+        {
+            if (currOpenedFile.points[(Int32)PointType.Source].Count < 1) return;
+            SaveFileDialog sfd1 = new SaveFileDialog();
+            sfd1.Filter = "Plot image|*.png";
+            sfd1.Title = "Save plot image:";
+            if (sfd1.ShowDialog() == DialogResult.OK)
+            {
+                Stream sw = sfd1.OpenFile();
+                mainPlot.SaveImage(sw, System.Drawing.Imaging.ImageFormat.Png);
+                sw.Close();
+                consoleOut.Text = "Success saving image.";
+            }
+        }
+
+        private void displTableSource_Click(object sender, EventArgs e)
+        {
+            tableType = PointType.Source;
+            DisplayResults();
+        }
+
+        private void aboutMenu_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(" Get data from Voltammograms.\n Version: 1.1.0.0\n Developed by: Snetkov Dmitriy\n License: MIT License", "About window", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                return;
+        }
+
+        private void gitHubButtom_Click(object sender, EventArgs e)
+        {
+            string target = "https://snetkovda.github.io/GetDataFromVoltammograms/";
+            try
+            {
+                System.Diagnostics.Process.Start(target);
+            }
+            catch (Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                    MessageBox.Show(noBrowser.Message);
+            }
+            catch (Exception other)
+            {
+                MessageBox.Show(other.Message);
+            }
+        }
+
+        private void closeButDropList_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
     

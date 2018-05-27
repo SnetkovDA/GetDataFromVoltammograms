@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Simplifier
 {
-    public enum PointType { Source = 0, Result1, Result2, Polinom, AbsSource, FindPoints1, FindPoints2 }
+    public enum PointType { Source = 0, Result1, Result2, Polinom, AbsSource, FindPoints1, FindPoints2, SelectedPoint }
     public enum DataType { Current = 0, Potential, Time, Index }
 
     class Point
@@ -81,7 +81,6 @@ namespace Simplifier
                 if(Values[i] < 0)
                     Values[i] = Values[i]*-1;
             }
-                
         }
     }
 
@@ -195,10 +194,8 @@ namespace Simplifier
                             else
                                 points[(Int32)PointType.FindPoints1].Add(new Point(points[(Int32)PointType.Source][0]));
                         }
-                            
                         flag = 1;
                     }
-
                 }
                 else
                 {
@@ -213,8 +210,7 @@ namespace Simplifier
                                 points[(Int32)PointType.FindPoints2].Add(new Point(points[(Int32)PointType.Source][0]));
                         }
                         flag = 2;
-                    }
-                        
+                    }  
                 }
             }
         }
@@ -271,119 +267,7 @@ namespace Simplifier
                     indexMin = i;
                 }
             }
-        }
-
-        //Depricated
-        public System.Drawing.PointF[] ConvertToDisplay(PointType type, DataType x_axis, DataType y_axis, params Double[] val)
-        {
-            if (points[(int)type].Count < 1) return null;
-            var result = new System.Drawing.PointF[points[(int)type].Count];
-            Double k = 0;
-            Double xShift = val[1];
-            Double yShift = val[3];
-            Double maxValue, minValue;
-            Int32 a;
-            FindMinMaxValue(points[(int)type], x_axis, out maxValue, out a, out minValue, out a);
-            if ((maxValue - minValue) != 0)
-                k = val[0] / (maxValue - minValue);
-            if (minValue < 0)
-                xShift -= minValue;
-            else
-                xShift += minValue;
-            for (int i = 0; i < result.Length; i++)
-                result[i].X = (float)(points[(int)type][i].Values[(Int32)x_axis] * k + xShift);
-
-            FindMinMaxValue(points[(int)type], y_axis, out maxValue, out a, out minValue, out a);
-            if ((maxValue - minValue) != 0)
-                k = val[2] / (maxValue - minValue);
-            if (minValue < 0)
-                yShift -= minValue;
-            else
-                yShift += minValue;
-
-            for (int i = 0; i < result.Length; i++)
-                result[i].Y = (float)(points[(int)type][i].Values[(Int32)y_axis] * k + yShift);
-
-            return result;
-        }
-
-        //Legacy
-        Double[] CreatePolynom(List<Point> data, Int32 power, DataType x_axis, DataType y_axis)
-        {
-            //Allocate memory for calculating
-            Double[] a = new Double[power + 1];
-            Double[] b = new Double[power + 1];
-            Double[,] sums = new Double[power + 1, power + 1];
-            //init square sum matrix
-            for (int i = 0; i < power + 1; i++)
-            {
-                for (int j = 0; j < power + 1; j++)
-                {
-                    sums[i, j] = 0d;
-                    for (int k = 0; k < data.Count; k++)
-                    {
-                        sums[i, j] += Math.Pow(data[k].Values[(Int32)x_axis], i + j);
-                    }
-                }
-            }
-            //init free coef column
-            for (int i = 0; i < power + 1; i++)
-            {
-                for (int j = 0; j < data.Count; j++)
-                {
-                    b[i] += Math.Pow(data[j].Values[(Int32)x_axis], i) + data[j].Values[(Int32)y_axis];
-                }
-            }
-            //check for 0 in diagonal 
-            double temp = 0, M = 0;
-            for (int i = 0; i < power + 1; i++)
-            {
-                if (sums[i, i] == 0.0)
-                {
-                    for (int j = 0; j < power+1; j++)
-                    {
-                        if (j == i) continue;
-                        if (sums[i, j] != 0 && sums[j, i] != 0)
-                        {
-                            for (int k = 0; k < power+1; k++)
-                            {
-                                temp = sums[j, k];
-                                sums[j, k] = sums[i, k];
-                                sums[i, k] = temp;
-                            }
-                            temp = b[j];
-                            b[j] = b[i];
-                            b[i] = temp;
-                            break;
-                        }
-                    }
-                }
-            }
-            //proccess rows
-            for (int k = 0; k < power+1; k++)
-            {
-                for (int i = k+1; i < power+1; i++)
-                {
-                    if (sums[k, k] == 0) return null;
-                    M = sums[i, k] / sums[k, k];
-                    for (int j = k; j < power + 1; j++)
-                        sums[i, j] -= M * sums[k, j];
-                    b[i] -= M * b[k];
-                }
-            }
-            //calculate result matrix
-            for (int i = power; i >= 0; i--)
-            {
-                Double s = 0;
-                for (int j = i; j < power+1; j++)
-                {
-                    s = s + sums[i, j] * a[j];
-                }
-                a[i] = (b[i] - s) / sums[i, i];
-            }
-            return a;
-        }
-        
+        }        
     }
 }
 

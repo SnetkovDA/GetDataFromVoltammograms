@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileDroppedList = new System.Windows.Forms.ToolStripMenuItem();
             this.openButDropList = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,9 +60,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.findPointsButtom = new System.Windows.Forms.ToolStripMenuItem();
             this.consoleOut = new System.Windows.Forms.Label();
-            this.grapficsOut = new System.Windows.Forms.PictureBox();
             this.yAxesLabel = new System.Windows.Forms.Label();
             this.XaxisLabel = new System.Windows.Forms.Label();
             this.powerVal = new System.Windows.Forms.NumericUpDown();
@@ -72,28 +73,43 @@
             this.shiftAfterLast = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataView = new System.Windows.Forms.DataGridView();
+            this.tableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.displayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.displTableFindPoints1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.displTableFindPoints2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeTableButt = new System.Windows.Forms.ToolStripMenuItem();
+            this.displTableSource = new System.Windows.Forms.ToolStripMenuItem();
+            this.findPointBut = new System.Windows.Forms.Button();
+            this.saveScreenShoot = new System.Windows.Forms.ToolStripMenuItem();
+            this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.gitHubButtom = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grapficsOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.powerVal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPlot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deltaValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftAfterLast)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileDroppedList,
-            this.actionsToolStripMenuItem});
+            this.actionsToolStripMenuItem,
+            this.tableToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileDroppedList
             // 
@@ -109,7 +125,7 @@
             // 
             this.openButDropList.Name = "openButDropList";
             this.openButDropList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openButDropList.Size = new System.Drawing.Size(148, 22);
+            this.openButDropList.Size = new System.Drawing.Size(152, 22);
             this.openButDropList.Text = "Open";
             this.openButDropList.Click += new System.EventHandler(this.openButDropList_Click);
             // 
@@ -117,7 +133,7 @@
             // 
             this.saveButDropList.Name = "saveButDropList";
             this.saveButDropList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveButDropList.Size = new System.Drawing.Size(148, 22);
+            this.saveButDropList.Size = new System.Drawing.Size(152, 22);
             this.saveButDropList.Text = "Save";
             this.saveButDropList.Click += new System.EventHandler(this.saveButDropList_Click);
             // 
@@ -125,18 +141,19 @@
             // 
             this.closeButDropList.Name = "closeButDropList";
             this.closeButDropList.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.closeButDropList.Size = new System.Drawing.Size(148, 22);
+            this.closeButDropList.Size = new System.Drawing.Size(152, 22);
             this.closeButDropList.Text = "Close";
+            this.closeButDropList.Click += new System.EventHandler(this.closeButDropList_Click);
             // 
             // actionsToolStripMenuItem
             // 
             this.actionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.displayAllToolStripMenuItem,
             this.axesToolStripMenuItem,
-            this.findPointsButtom});
+            this.saveScreenShoot});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
-            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.actionsToolStripMenuItem.Text = "Actions";
+            this.actionsToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.actionsToolStripMenuItem.Text = "Plot";
             // 
             // displayAllToolStripMenuItem
             // 
@@ -145,24 +162,22 @@
             this.eTToolStripMenuItem,
             this.displayCalculatedPlot});
             this.displayAllToolStripMenuItem.Name = "displayAllToolStripMenuItem";
-            this.displayAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.displayAllToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.displayAllToolStripMenuItem.Text = "Display";
-            this.displayAllToolStripMenuItem.Click += new System.EventHandler(this.displayAllToolStripMenuItem_Click);
             // 
             // showAllPlots
             // 
             this.showAllPlots.Name = "showAllPlots";
-            this.showAllPlots.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.showAllPlots.Size = new System.Drawing.Size(208, 22);
+            this.showAllPlots.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.showAllPlots.Size = new System.Drawing.Size(195, 22);
             this.showAllPlots.Text = "All plots";
             this.showAllPlots.Click += new System.EventHandler(this.iTToolStripMenuItem_Click);
             // 
             // eTToolStripMenuItem
             // 
             this.eTToolStripMenuItem.Name = "eTToolStripMenuItem";
-            this.eTToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.D)));
-            this.eTToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.eTToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.eTToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.eTToolStripMenuItem.Text = "Source plot";
             this.eTToolStripMenuItem.Click += new System.EventHandler(this.eTToolStripMenuItem_Click);
             // 
@@ -170,7 +185,7 @@
             // 
             this.displayCalculatedPlot.Name = "displayCalculatedPlot";
             this.displayCalculatedPlot.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.displayCalculatedPlot.Size = new System.Drawing.Size(208, 22);
+            this.displayCalculatedPlot.Size = new System.Drawing.Size(195, 22);
             this.displayCalculatedPlot.Text = "Calculated plot";
             this.displayCalculatedPlot.Click += new System.EventHandler(this.displayCalculatedPlot_Click);
             // 
@@ -180,7 +195,7 @@
             this.iTToolStripMenuItem1,
             this.iUToolStripMenuItem});
             this.axesToolStripMenuItem.Name = "axesToolStripMenuItem";
-            this.axesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.axesToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.axesToolStripMenuItem.Text = "Axis";
             // 
             // iTToolStripMenuItem1
@@ -190,14 +205,14 @@
             this.uToolStripMenuItem,
             this.tToolStripMenuItem});
             this.iTToolStripMenuItem1.Name = "iTToolStripMenuItem1";
-            this.iTToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
+            this.iTToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.iTToolStripMenuItem1.Text = "X-axis";
             // 
             // iToolStripMenuItem
             // 
             this.iToolStripMenuItem.CheckOnClick = true;
             this.iToolStripMenuItem.Name = "iToolStripMenuItem";
-            this.iToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.iToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iToolStripMenuItem.Text = "Current";
             this.iToolStripMenuItem.Click += new System.EventHandler(this.iToolStripMenuItem_Click);
             // 
@@ -205,7 +220,7 @@
             // 
             this.uToolStripMenuItem.CheckOnClick = true;
             this.uToolStripMenuItem.Name = "uToolStripMenuItem";
-            this.uToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.uToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.uToolStripMenuItem.Text = "Potentioal";
             this.uToolStripMenuItem.Click += new System.EventHandler(this.uToolStripMenuItem_Click);
             // 
@@ -213,7 +228,7 @@
             // 
             this.tToolStripMenuItem.CheckOnClick = true;
             this.tToolStripMenuItem.Name = "tToolStripMenuItem";
-            this.tToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.tToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tToolStripMenuItem.Text = "Time";
             this.tToolStripMenuItem.Click += new System.EventHandler(this.tToolStripMenuItem_Click);
             // 
@@ -224,7 +239,7 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.iUToolStripMenuItem.Name = "iUToolStripMenuItem";
-            this.iUToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.iUToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iUToolStripMenuItem.Text = "Y-axis";
             // 
             // toolStripMenuItem1
@@ -248,14 +263,6 @@
             this.toolStripMenuItem3.Text = "Time";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
-            // findPointsButtom
-            // 
-            this.findPointsButtom.Name = "findPointsButtom";
-            this.findPointsButtom.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.findPointsButtom.Size = new System.Drawing.Size(152, 22);
-            this.findPointsButtom.Text = "Find points";
-            this.findPointsButtom.Click += new System.EventHandler(this.findPointsButtom_Click);
-            // 
             // consoleOut
             // 
             this.consoleOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -266,20 +273,11 @@
             this.consoleOut.TabIndex = 1;
             this.consoleOut.Text = "Console";
             // 
-            // grapficsOut
-            // 
-            this.grapficsOut.Location = new System.Drawing.Point(39, 27);
-            this.grapficsOut.Name = "grapficsOut";
-            this.grapficsOut.Size = new System.Drawing.Size(730, 380);
-            this.grapficsOut.TabIndex = 2;
-            this.grapficsOut.TabStop = false;
-            this.grapficsOut.Visible = false;
-            // 
             // yAxesLabel
             // 
-            this.yAxesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.yAxesLabel.AutoSize = true;
-            this.yAxesLabel.Location = new System.Drawing.Point(25, 200);
+            this.yAxesLabel.BackColor = System.Drawing.Color.White;
+            this.yAxesLabel.Location = new System.Drawing.Point(12, 40);
             this.yAxesLabel.Name = "yAxesLabel";
             this.yAxesLabel.Size = new System.Drawing.Size(14, 13);
             this.yAxesLabel.TabIndex = 4;
@@ -289,7 +287,8 @@
             // 
             this.XaxisLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.XaxisLabel.AutoSize = true;
-            this.XaxisLabel.Location = new System.Drawing.Point(457, 351);
+            this.XaxisLabel.BackColor = System.Drawing.Color.White;
+            this.XaxisLabel.Location = new System.Drawing.Point(398, 353);
             this.XaxisLabel.Name = "XaxisLabel";
             this.XaxisLabel.Size = new System.Drawing.Size(14, 13);
             this.XaxisLabel.TabIndex = 16;
@@ -297,7 +296,7 @@
             // 
             // powerVal
             // 
-            this.powerVal.Location = new System.Drawing.Point(174, 40);
+            this.powerVal.Location = new System.Drawing.Point(120, 31);
             this.powerVal.Maximum = new decimal(new int[] {
             6,
             0,
@@ -332,91 +331,107 @@
             this.mainPlot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea3.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea3.Area3DStyle.PointDepth = 10;
-            chartArea3.Area3DStyle.PointGapDepth = 10;
-            chartArea3.Area3DStyle.WallWidth = 2;
-            chartArea3.AxisY.ScaleView.SmallScrollMinSize = 0.0001D;
-            chartArea3.CursorX.LineColor = System.Drawing.Color.Blue;
-            chartArea3.CursorY.Interval = 0.0001D;
-            chartArea3.CursorY.LineColor = System.Drawing.Color.Blue;
-            chartArea3.Name = "ChartArea1";
-            this.mainPlot.ChartAreas.Add(chartArea3);
+            chartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea1.Area3DStyle.PointDepth = 10;
+            chartArea1.Area3DStyle.PointGapDepth = 10;
+            chartArea1.Area3DStyle.WallWidth = 2;
+            chartArea1.AxisY.ScaleView.SmallScrollMinSize = 0.0001D;
+            chartArea1.CursorX.LineColor = System.Drawing.Color.Blue;
+            chartArea1.CursorY.Interval = 0.0001D;
+            chartArea1.CursorY.LineColor = System.Drawing.Color.Blue;
+            chartArea1.Name = "ChartArea1";
+            this.mainPlot.ChartAreas.Add(chartArea1);
             this.mainPlot.Cursor = System.Windows.Forms.Cursors.Cross;
             this.mainPlot.IsSoftShadows = false;
-            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            this.mainPlot.Legends.Add(legend3);
+            legend1.IsTextAutoFit = false;
+            legend1.MaximumAutoSize = 30F;
+            legend1.Name = "Legend1";
+            this.mainPlot.Legends.Add(legend1);
             this.mainPlot.Location = new System.Drawing.Point(0, 27);
             this.mainPlot.MaximumSize = new System.Drawing.Size(7800, 3800);
-            this.mainPlot.MinimumSize = new System.Drawing.Size(780, 380);
+            this.mainPlot.MinimumSize = new System.Drawing.Size(580, 380);
             this.mainPlot.Name = "mainPlot";
             this.mainPlot.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series15.ChartArea = "ChartArea1";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series15.Legend = "Legend1";
-            series15.LegendText = "Исходные значения";
-            series15.Name = "Series1";
-            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series15.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series16.Legend = "Legend1";
-            series16.LegendText = "Найденные значения 1";
-            series16.Name = "Series2";
-            series16.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series17.Legend = "Legend1";
-            series17.LegendText = "Найденные значения 2";
-            series17.Name = "Series3";
-            series17.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series18.Legend = "Legend1";
-            series18.LegendText = "Разделяющий полином";
-            series18.Name = "Series4";
-            series18.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series19.Legend = "Legend1";
-            series19.LegendText = "Исходные данные по модулю";
-            series19.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            series19.Name = "Series5";
-            series19.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series20.Legend = "Legend1";
-            series20.LegendText = "Искомые точки 1";
-            series20.MarkerColor = System.Drawing.Color.DarkRed;
-            series20.MarkerSize = 8;
-            series20.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series20.Name = "Series6";
-            series21.ChartArea = "ChartArea1";
-            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series21.Legend = "Legend1";
-            series21.LegendText = "Искомые точки 2";
-            series21.MarkerColor = System.Drawing.Color.Red;
-            series21.MarkerSize = 8;
-            series21.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series21.Name = "Series7";
-            this.mainPlot.Series.Add(series15);
-            this.mainPlot.Series.Add(series16);
-            this.mainPlot.Series.Add(series17);
-            this.mainPlot.Series.Add(series18);
-            this.mainPlot.Series.Add(series19);
-            this.mainPlot.Series.Add(series20);
-            this.mainPlot.Series.Add(series21);
-            this.mainPlot.Size = new System.Drawing.Size(780, 380);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series1.Legend = "Legend1";
+            series1.LegendText = "Source values";
+            series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Legend = "Legend1";
+            series2.LegendText = "Finded values 1";
+            series2.Name = "Series2";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series3.Legend = "Legend1";
+            series3.LegendText = "Finded values 2";
+            series3.Name = "Series3";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series4.BorderColor = System.Drawing.Color.Black;
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series4.Legend = "Legend1";
+            series4.LegendText = "Polynom";
+            series4.Name = "Series4";
+            series4.ShadowColor = System.Drawing.Color.DimGray;
+            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series5.Legend = "Legend1";
+            series5.LegendText = "Abs source values";
+            series5.MarkerColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            series5.Name = "Series5";
+            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series6.Legend = "Legend1";
+            series6.LegendText = "Finded points 1";
+            series6.MarkerColor = System.Drawing.Color.DarkRed;
+            series6.MarkerSize = 8;
+            series6.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series6.Name = "Series6";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series7.Legend = "Legend1";
+            series7.LegendText = "Finded points 2";
+            series7.MarkerColor = System.Drawing.Color.Red;
+            series7.MarkerSize = 8;
+            series7.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series7.Name = "Series7";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series8.IsVisibleInLegend = false;
+            series8.Legend = "Legend1";
+            series8.MarkerBorderColor = System.Drawing.Color.Blue;
+            series8.MarkerBorderWidth = 2;
+            series8.MarkerColor = System.Drawing.Color.Transparent;
+            series8.MarkerSize = 10;
+            series8.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series8.Name = "Series8";
+            series8.YValuesPerPoint = 2;
+            this.mainPlot.Series.Add(series1);
+            this.mainPlot.Series.Add(series2);
+            this.mainPlot.Series.Add(series3);
+            this.mainPlot.Series.Add(series4);
+            this.mainPlot.Series.Add(series5);
+            this.mainPlot.Series.Add(series6);
+            this.mainPlot.Series.Add(series7);
+            this.mainPlot.Series.Add(series8);
+            this.mainPlot.Size = new System.Drawing.Size(580, 380);
             this.mainPlot.TabIndex = 19;
             this.mainPlot.TabStop = false;
             this.mainPlot.Text = "AllGraphics";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            title3.Name = "SourceGraphic";
-            title3.Text = "График";
-            title3.Visible = false;
-            this.mainPlot.Titles.Add(title3);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            title1.Name = "SourceGraphic";
+            title1.Text = "График";
+            title1.Visible = false;
+            this.mainPlot.Titles.Add(title1);
             // 
             // allData
             // 
@@ -425,20 +440,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Location = new System.Drawing.Point(9, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 34);
+            this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Степень разделяющего\r\nполинома";
+            this.label1.Text = "Polynom power";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 80);
+            this.label2.Location = new System.Drawing.Point(9, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
+            this.label2.Size = new System.Drawing.Size(71, 17);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Ширина линии";
+            this.label2.Text = "Line width";
             // 
             // deltaValue
             // 
@@ -448,7 +463,7 @@
             0,
             0,
             262144});
-            this.deltaValue.Location = new System.Drawing.Point(142, 77);
+            this.deltaValue.Location = new System.Drawing.Point(88, 68);
             this.deltaValue.Maximum = new decimal(new int[] {
             1,
             0,
@@ -461,7 +476,7 @@
             // 
             // shiftAfterLast
             // 
-            this.shiftAfterLast.Location = new System.Drawing.Point(174, 116);
+            this.shiftAfterLast.Location = new System.Drawing.Point(120, 107);
             this.shiftAfterLast.Maximum = new decimal(new int[] {
             6,
             0,
@@ -479,15 +494,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 118);
+            this.label3.Location = new System.Drawing.Point(9, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 17);
+            this.label3.Size = new System.Drawing.Size(105, 17);
             this.label3.TabIndex = 24;
-            this.label3.Text = "Точек от последней";
+            this.label3.Text = "Points from last";
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.findPointBut);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.shiftAfterLast);
             this.groupBox1.Controls.Add(this.label3);
@@ -495,18 +511,161 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.deltaValue);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(558, 246);
+            this.groupBox1.Location = new System.Drawing.Point(412, 155);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(214, 148);
+            this.groupBox1.Size = new System.Drawing.Size(162, 174);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Свойства";
+            this.groupBox1.Text = "Properties";
+            // 
+            // dataView
+            // 
+            this.dataView.AllowUserToDeleteRows = false;
+            this.dataView.AllowUserToResizeRows = false;
+            this.dataView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataView.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.X,
+            this.Y});
+            this.dataView.Enabled = false;
+            this.dataView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataView.Location = new System.Drawing.Point(580, 27);
+            this.dataView.MaximumSize = new System.Drawing.Size(2030, 3800);
+            this.dataView.MinimumSize = new System.Drawing.Size(203, 380);
+            this.dataView.Name = "dataView";
+            this.dataView.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataView.RowHeadersVisible = false;
+            this.dataView.RowHeadersWidth = 15;
+            this.dataView.Size = new System.Drawing.Size(203, 380);
+            this.dataView.TabIndex = 26;
+            this.dataView.SelectionChanged += new System.EventHandler(this.dataView_SelectionChanged);
+            // 
+            // tableToolStripMenuItem
+            // 
+            this.tableToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.displayToolStripMenuItem,
+            this.removeTableButt});
+            this.tableToolStripMenuItem.Name = "tableToolStripMenuItem";
+            this.tableToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.tableToolStripMenuItem.Text = "Table";
+            // 
+            // displayToolStripMenuItem
+            // 
+            this.displayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.displTableSource,
+            this.displTableFindPoints1,
+            this.displTableFindPoints2});
+            this.displayToolStripMenuItem.Name = "displayToolStripMenuItem";
+            this.displayToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.displayToolStripMenuItem.Text = "Display";
+            // 
+            // displTableFindPoints1
+            // 
+            this.displTableFindPoints1.Name = "displTableFindPoints1";
+            this.displTableFindPoints1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D1)));
+            this.displTableFindPoints1.Size = new System.Drawing.Size(211, 22);
+            this.displTableFindPoints1.Text = "Find points1";
+            this.displTableFindPoints1.Click += new System.EventHandler(this.displTableFindPoints1_Click);
+            // 
+            // displTableFindPoints2
+            // 
+            this.displTableFindPoints2.Name = "displTableFindPoints2";
+            this.displTableFindPoints2.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D2)));
+            this.displTableFindPoints2.Size = new System.Drawing.Size(211, 22);
+            this.displTableFindPoints2.Text = "Find points2";
+            this.displTableFindPoints2.Click += new System.EventHandler(this.displTableFindPoints2_Click);
+            // 
+            // removeTableButt
+            // 
+            this.removeTableButt.Name = "removeTableButt";
+            this.removeTableButt.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.Delete)));
+            this.removeTableButt.Size = new System.Drawing.Size(200, 22);
+            this.removeTableButt.Text = "Remove";
+            this.removeTableButt.Click += new System.EventHandler(this.removeTableButt_Click);
+            // 
+            // displTableSource
+            // 
+            this.displTableSource.Name = "displTableSource";
+            this.displTableSource.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D0)));
+            this.displTableSource.Size = new System.Drawing.Size(211, 22);
+            this.displTableSource.Text = "Source";
+            this.displTableSource.Click += new System.EventHandler(this.displTableSource_Click);
+            // 
+            // findPointBut
+            // 
+            this.findPointBut.Enabled = false;
+            this.findPointBut.Location = new System.Drawing.Point(12, 136);
+            this.findPointBut.Name = "findPointBut";
+            this.findPointBut.Size = new System.Drawing.Size(140, 26);
+            this.findPointBut.TabIndex = 25;
+            this.findPointBut.Text = "Find points";
+            this.findPointBut.UseVisualStyleBackColor = true;
+            this.findPointBut.Click += new System.EventHandler(this.findPointsButtom_Click);
+            // 
+            // saveScreenShoot
+            // 
+            this.saveScreenShoot.Name = "saveScreenShoot";
+            this.saveScreenShoot.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.saveScreenShoot.Size = new System.Drawing.Size(206, 22);
+            this.saveScreenShoot.Text = "Save image";
+            this.saveScreenShoot.Click += new System.EventHandler(this.saveScreenShoot_Click);
+            // 
+            // X
+            // 
+            this.X.HeaderText = "X";
+            this.X.Name = "X";
+            this.X.ReadOnly = true;
+            // 
+            // Y
+            // 
+            this.Y.HeaderText = "Y";
+            this.Y.Name = "Y";
+            this.Y.ReadOnly = true;
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutMenu,
+            this.gitHubButtom});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.aboutToolStripMenuItem.Text = "Help";
+            // 
+            // aboutMenu
+            // 
+            this.aboutMenu.Name = "aboutMenu";
+            this.aboutMenu.Size = new System.Drawing.Size(152, 22);
+            this.aboutMenu.Text = "About";
+            this.aboutMenu.Click += new System.EventHandler(this.aboutMenu_Click);
+            // 
+            // gitHubButtom
+            // 
+            this.gitHubButtom.Name = "gitHubButtom";
+            this.gitHubButtom.Size = new System.Drawing.Size(152, 22);
+            this.gitHubButtom.Text = "Open GitHub";
+            this.gitHubButtom.Click += new System.EventHandler(this.gitHubButtom_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 431);
+            this.Controls.Add(this.dataView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.XaxisLabel);
             this.Controls.Add(this.yAxesLabel);
@@ -514,8 +673,8 @@
             this.Controls.Add(this.consoleOut);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.mainPlot);
-            this.Controls.Add(this.grapficsOut);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(8000, 4700);
             this.MinimumSize = new System.Drawing.Size(800, 470);
@@ -526,7 +685,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grapficsOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.powerVal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPlot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.allData)).EndInit();
@@ -534,6 +692,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.shiftAfterLast)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,10 +706,8 @@
         private System.Windows.Forms.ToolStripMenuItem saveButDropList;
         private System.Windows.Forms.ToolStripMenuItem closeButDropList;
         private System.Windows.Forms.ToolStripMenuItem actionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem findPointsButtom;
         private System.Windows.Forms.Label consoleOut;
         private System.Windows.Forms.ToolStripMenuItem displayAllToolStripMenuItem;
-        private System.Windows.Forms.PictureBox grapficsOut;
         private System.Windows.Forms.ToolStripMenuItem showAllPlots;
         private System.Windows.Forms.ToolStripMenuItem eTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem displayCalculatedPlot;
@@ -575,6 +732,20 @@
         private System.Windows.Forms.NumericUpDown shiftAfterLast;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataView;
+        private System.Windows.Forms.ToolStripMenuItem tableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem displayToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem displTableFindPoints1;
+        private System.Windows.Forms.ToolStripMenuItem displTableFindPoints2;
+        private System.Windows.Forms.ToolStripMenuItem removeTableButt;
+        private System.Windows.Forms.ToolStripMenuItem displTableSource;
+        private System.Windows.Forms.Button findPointBut;
+        private System.Windows.Forms.ToolStripMenuItem saveScreenShoot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn X;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Y;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutMenu;
+        private System.Windows.Forms.ToolStripMenuItem gitHubButtom;
     }
 }
 
