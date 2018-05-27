@@ -21,10 +21,10 @@ of the project.
 
 * File [GDFVG.exe](https://github.com/SnetkovDA/GetDataFromVoltammograms/blob/master/GDFVG.exe) is ready to use,
 builded version of the project for Windows OS (32 bit).
-To run it: 
-  1. Download .exe file.
-  2. (optional) Copy to any folder.
-  3. Run GDFVG.exe file.
+To run it:
+1. Download .exe file.
+2. (optional) Copy to any folder.
+3. Run GDFVG.exe file.
 
 ## Contact information
 Created by Dmitriy Snetkov.
