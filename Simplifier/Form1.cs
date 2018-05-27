@@ -32,7 +32,7 @@ namespace Simplifier
             XaxisLabel.Text = "E";
             y_axis = DataType.Current;
             yAxesLabel.Text = "I";
-            saveType = PointType.AbsSource;
+            saveType = PointType.Source;
             tableType = PointType.Source;
             defName = this.Text;
 
@@ -202,7 +202,7 @@ namespace Simplifier
         private void findPointsButtom_Click(object sender, EventArgs e)
         {
             if (currOpenedFile.points[(Int32)PointType.Source].Count < 1) return;
-            polynom = currOpenedFile.FindPolynom((Int32)powerVal.Value, DataType.Potential, DataType.Current, PointType.AbsSource);
+            polynom = currOpenedFile.FindPolynom((Int32)powerVal.Value, DataType.Potential, DataType.Current, PointType.Source);
             StringBuilder sb = new StringBuilder();
             Int32 leng = polynom.Length - 1;
             if (leng > 3)
@@ -220,11 +220,11 @@ namespace Simplifier
             if (leng > 0)
                 sb.Append("...");
             polynomLabel.Text = sb.ToString();
-            plotType = PointType.AbsSource;
+            plotType = PointType.Source;
             Drawing(true);
             plotType = PointType.Polinom;
             Drawing(false);
-            currOpenedFile.SliceGraphics(polynom, (Double)deltaValue.Value, (Int32)shiftAfterLast.Value, DataType.Potential, DataType.Current);
+            currOpenedFile.SliceGraphics(polynom, (Double)deltaValue.Value, (Int32)shiftAfterLast.Value, inverseDirection.Checked, DataType.Potential, DataType.Current);
             tableType = PointType.FindPoints1;
         }
 
@@ -294,7 +294,7 @@ namespace Simplifier
 
         private void aboutMenu_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(" Get data from Voltammograms.\n Version: 1.1.0.0\n Developed by: Snetkov Dmitriy\n License: MIT License", "About window", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+            if (MessageBox.Show(" Get data from Voltammograms.\n Version: 1.2.2.0\n Developed by: Snetkov Dmitriy\n License: MIT License", "About window", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 return;
         }
 

@@ -143,14 +143,8 @@ namespace Simplifier
         public Double[] FindPolynom(Int32 power, DataType x_axis, DataType y_axis, PointType apprData)
         {
             if (points[0].Count < 0) return null;
-            points[3] = new List<Point>();
-            points[4] = new List<Point>();
-            for (int i = 0; i < points[0].Count; i++)
-            {
-                points[4].Add(new Point(points[0][i]));
-                points[4][i].ToAbs();
-            }
-            Double[] ploCoef = CreatePolynomMatrix(points[4], power, x_axis, y_axis);
+            points[(Int32)PointType.Polinom] = new List<Point>();
+            Double[] ploCoef = CreatePolynomMatrix(points[(Int32)apprData], power, x_axis, y_axis);
             Double[] val = new Double[4];
             Double minX, maxX;  
             Int32 a;
@@ -163,33 +157,74 @@ namespace Simplifier
                 val[3] = i;
                 for (int j = 0; j < ploCoef.Length; j++)
                     val[(int)y_axis] = val[(int)y_axis] + ploCoef[j] * Power(val[(int)x_axis], j);
-                points[3].Add(new Point(val));
+                points[(Int32)PointType.Polinom].Add(new Point(val));
             }
             return ploCoef;
         }
 
-        public void SliceGraphics(Double[] polynom, Double delta, Int32 shift, DataType x_axis, DataType y_axis)
+        public void SliceGraphics(Double[] polynom, Double delta, Int32 shift, Boolean inverce, DataType x_axis, DataType y_axis)
         {
             Double temp = 0;
             points[(Int32)PointType.Result1] = new List<Point>();
             points[(Int32)PointType.Result2] = new List<Point>();
             points[(Int32)PointType.FindPoints1] = new List<Point>();
             points[(Int32)PointType.FindPoints2] = new List<Point>();
-            Int32 flag = 0;
-
-            for (int i = 0; i < points[(Int32)PointType.AbsSource].Count; i++)
+            Int32 flag = 0, startPos = 0, endPos = points[(Int32)PointType.Source].Count;
+            if (inverce)
+            {
+                startPos = endPos-1;
+                endPos = 0;
+                for (int i = startPos; i >= endPos; i--)
+                {
+                    temp = 0;
+                    for (int j = 0; j < polynom.Length; j++)
+                        temp += polynom[j] * Power(points[(Int32)PointType.Source][i].Values[(int)x_axis], j);
+                    if (points[(Int32)PointType.Source][i].Values[(int)y_axis] > temp)
+                    {
+                        if (Math.Abs(points[(Int32)PointType.Source][i].Values[(int)y_axis] - temp) > delta)
+                        {
+                            points[(Int32)PointType.Result1].Add(new Point(points[(Int32)PointType.Source][i]));
+                            if (flag != 1)
+                            {
+                                if (i - shift > 0)
+                                    points[(Int32)PointType.FindPoints1].Add(new Point(points[(Int32)PointType.Source][i - shift]));
+                                else
+                                    points[(Int32)PointType.FindPoints1].Add(new Point(points[(Int32)PointType.Source][0]));
+                            }
+                            flag = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (Math.Abs(points[(Int32)PointType.Source][i].Values[(int)y_axis] - temp) > delta)
+                        {
+                            points[(Int32)PointType.Result2].Add(new Point(points[(Int32)PointType.Source][i]));
+                            if (flag != 2)
+                            {
+                                if (i - shift > 0)
+                                    points[(Int32)PointType.FindPoints2].Add(new Point(points[(Int32)PointType.Source][i - shift]));
+                                else
+                                    points[(Int32)PointType.FindPoints2].Add(new Point(points[(Int32)PointType.Source][0]));
+                            }
+                            flag = 2;
+                        }
+                    }
+                }
+                return;
+            }
+            for (int i = startPos; i < endPos; i++)
             {
                 temp = 0;
                 for (int j = 0; j < polynom.Length; j++)
-                    temp += polynom[j] * Power(points[(Int32)PointType.AbsSource][i].Values[(int)x_axis], j);
-                if (points[(Int32)PointType.AbsSource][i].Values[(int)y_axis] > temp)
+                    temp += polynom[j] * Power(points[(Int32)PointType.Source][i].Values[(int)x_axis], j);
+                if (points[(Int32)PointType.Source][i].Values[(int)y_axis] > temp)
                 {
-                    if (Math.Abs(points[(Int32)PointType.AbsSource][i].Values[(int)y_axis] - temp) > delta)
+                    if (Math.Abs(points[(Int32)PointType.Source][i].Values[(int)y_axis] - temp) > delta)
                     {
                         points[(Int32)PointType.Result1].Add(new Point(points[(Int32)PointType.Source][i]));
                         if (flag != 1)
                         {
-                            if(i - shift>0)
+                            if (i - shift > 0)
                                 points[(Int32)PointType.FindPoints1].Add(new Point(points[(Int32)PointType.Source][i - shift]));
                             else
                                 points[(Int32)PointType.FindPoints1].Add(new Point(points[(Int32)PointType.Source][0]));
@@ -199,7 +234,7 @@ namespace Simplifier
                 }
                 else
                 {
-                    if (Math.Abs(points[(Int32)PointType.AbsSource][i].Values[(int)y_axis] - temp) > delta)
+                    if (Math.Abs(points[(Int32)PointType.Source][i].Values[(int)y_axis] - temp) > delta)
                     {
                         points[(Int32)PointType.Result2].Add(new Point(points[(Int32)PointType.Source][i]));
                         if (flag != 2)
@@ -210,9 +245,10 @@ namespace Simplifier
                                 points[(Int32)PointType.FindPoints2].Add(new Point(points[(Int32)PointType.Source][0]));
                         }
                         flag = 2;
-                    }  
+                    }
                 }
             }
+
         }
 
         static Double Power(Double val, Int32 power)
