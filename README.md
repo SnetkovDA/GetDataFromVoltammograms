@@ -29,7 +29,8 @@ with the result, change parameters and go to step 3.
 ## Screenshots:
 
 ![Screenshot 1](https://i.imgur.com/l7X4LDC.png?raw=true "Before separation")
-***
+---
+
 ![Screenshot 2](https://i.imgur.com/DdnbA6U.png?raw=true "After separation")
 
 ## Contact information
