@@ -27,7 +27,7 @@ To run it:
 with the result, change parameters and go to step 3.
 
 ## Screenshots:
-![Screenshoot 1](https://imgur.com/a/MhbxWrC?raw=true "")
+![Screenshoot 1](https://i.imgur.com/DdnbA6U.png?raw=true "")
 
 ## Contact information
 Created by Dmitriy Snetkov.
