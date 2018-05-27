@@ -27,9 +27,7 @@ To run it:
 with the result, change parameters and go to step 3.
 
 ## Screenshots
-![screenshot1](http://picua.org/img/2018-05/27/68u0qbro5vd8vrswk4aekmwvt.png "Before separation.")
-***
-![screenshot2](http://picua.org/img/2018-05/27/h1kyu4i8rjh4lwxvtb2piosmy.png "After separation.")
+Before separation: ![screenshot1](http://picua.org/img/2018-05/27/68u0qbro5vd8vrswk4aekmwvt.png "Before separation.") After separation: ![screenshot2](http://picua.org/img/2018-05/27/h1kyu4i8rjh4lwxvtb2piosmy.png "After separation.")
 
 ## Contact information
 Created by Dmitriy Snetkov.
