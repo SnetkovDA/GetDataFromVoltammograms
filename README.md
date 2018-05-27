@@ -15,10 +15,10 @@ To run it:
 ## How to use this programm?
 1. Open file with data. Supports: *.dat, .csv* files.
     CSV file must be constructed in this way:
-     -First colomn - time;
-     -Second colomn - current;
-     -Third colomn - potential; 
-     -All colomns should be separated by ";".
+    - First colomn - time;
+    - Second colomn - current;
+    - Third colomn - potential; 
+    - All colomns should be separated by ";".
 2. Choose polynom power to separate source data. (Supported values: 1 - 6).
 3. Press "Find points" key.
 4. Now you can see plot of inverse values with line separates it into two part.
