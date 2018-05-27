@@ -27,7 +27,8 @@ To run it:
 with the result, change parameters and go to step 3.
 
 ## Screenshots:
-![Screenshoot 1](https://i.imgur.com/DdnbA6U.png?raw=true "")
+![Screenshot 1](https://i.imgur.com/l7X4LDC.png "Before separation.")
+![Screenshot 2](https://i.imgur.com/DdnbA6U.png "After separation.")
 
 ## Contact information
 Created by Dmitriy Snetkov.
