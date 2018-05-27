@@ -1,8 +1,8 @@
 # Get data from Voltammograms
-This software provides you ability to separate dark and light photocurrent on voltammogram.
+This software provides you ability to separate dark and light current on voltammogram.
 
 ## How to use this programm?
-1. Open file with data. Supports: *.dat, *.csv.*
+1. Open file with data. Supports: *.dat, .csv files.*
 CSV file must be constructed in this way:
 First colomn - time; Second colomn - current; Third colomn - potential; 
 All colomns should be separated by ";".
