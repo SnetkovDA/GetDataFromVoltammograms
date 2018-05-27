@@ -1,25 +1,37 @@
 # Get data from Voltammograms
 This software provides you ability to separate dark and light current on voltammogram.
 
+## Project description
+* Folder [Simplifier](https://github.com/SnetkovDA/GetDataFromVoltammograms/tree/master/Simplifier) contains full source code 
+of the project.
+
+* File [GDFVG.exe](https://github.com/SnetkovDA/GetDataFromVoltammograms/blob/master/GDFVG.exe) is ready to use,
+builded version of the project for Windows OS (32 bit).
+To run it:
+1. Download .exe file.
+2. (optional) Copy to any folder.
+3. Run GDFVG.exe file.
+
 ## How to use this programm?
 1. Open file with data. Supports: *.dat, .csv files.*
-CSV file must be constructed in this way:
-First colomn - time; Second colomn - current; Third colomn - potential; 
-All colomns should be separated by ";".
+    CSV file must be constructed in this way:
+      First colomn - time;
+      Second colomn - current;
+      Third colomn - potential; 
+      All colomns should be separated by ";".
 2. Choose polynom power to separate source data. (Supported values: 1 - 6).
-3. Press F2 key (or use Actions->Find points).
-4. Now you can see plot of absolute values with line separates it into two part.
+3. Press "Find points" key.
+4. Now you can see plot of inverse values with line separates it into two part.
 5. Press Ctrl+R to show two received graphs and finded points.
 6. If you satisfied with the result you achive, press Ctrl+S and choose what you want to save. Or if you don't satisfied 
 with the result, change parameters and go to step 3.
 
-## Project description
-Folder [Simplifier](https://github.com/SnetkovDA/GetDataFromVoltammograms/tree/master/Simplifier) contains full source code of the project.
+## Screenshots:
 
-File [GDFVG.7z](https://github.com/SnetkovDA/GetDataFromVoltammograms/blob/master/GDFVG.7z) is ready to use, builded version of the project for Windows OS (32bit). To run it: 
-1. Download 7z-archive.
-2. Extract all archive to any folder.
-3. Run Simplifier.exe file.
+![Screenshot 1](https://i.imgur.com/l7X4LDC.png?raw=true "Before separation")
+---
+
+![Screenshot 2](https://i.imgur.com/DdnbA6U.png?raw=true "After separation")
 
 ## Contact information
 Created by Dmitriy Snetkov.
