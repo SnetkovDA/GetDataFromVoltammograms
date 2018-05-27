@@ -5,11 +5,11 @@ This software provides you ability to separate dark and light current on voltamm
 * Folder [Simplifier](https://github.com/SnetkovDA/GetDataFromVoltammograms/tree/master/Simplifier) contains full source code 
 of the project.
 
-* File [GDFVG.exe](https://github.com/SnetkovDA/GetDataFromVoltammograms/blob/master/GDFVG.exe) is ready to use,
+* File [GDFVG.zip](https://github.com/SnetkovDA/GetDataFromVoltammograms/blob/master/GDFVG.zip) is ready to use,
 builded version of the project for Windows OS (32 bit).
 To run it:
-1. Download .exe file.
-2. (optional) Copy to any folder.
+1. Download .zip file.
+2. Unzip to any folder.
 3. Run GDFVG.exe file.
 
 ## How to use this programm?
@@ -26,12 +26,7 @@ To run it:
 6. If you satisfied with the result you achive, press Ctrl+S and choose what you want to save. Or if you don't satisfied 
 with the result, change parameters and go to step 3.
 
-## Screenshots:
-
-![Screenshot 1](https://i.imgur.com/l7X4LDC.png?raw=true "Before separation")
----
-
-![Screenshot 2](https://i.imgur.com/DdnbA6U.png?raw=true "After separation")
+## Screenshots
 
 ## Contact information
 Created by Dmitriy Snetkov.
